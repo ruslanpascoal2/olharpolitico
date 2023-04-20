@@ -4,10 +4,12 @@ import tw, { styled } from 'twin.macro'
 const NavbarContainer = styled.nav`
     height: 100px;
     position: fixed;
-    color: #fff;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-gray-darker);
+    color: var(--color-text);
+    font-size: 42px;
     ${tw`
         w-screen
-        bg-black
         flex
         items-center
         justify-center
@@ -23,7 +25,6 @@ export const Navbar = () => {
     <NavbarContainer>
         <NavbarContent>
             Navbar
-            ...
         </NavbarContent>
     </NavbarContainer>
   )
