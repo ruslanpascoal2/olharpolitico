@@ -1,6 +1,7 @@
 // vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import Unfonts from 'unplugin-fonts/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,5 +20,33 @@ export default defineConfig({
         plugins: ['babel-plugin-macros', 'babel-plugin-styled-components'],
       },
     }),
+    Unfonts({
+      custom: {
+        display: 'swap',
+        families: {
+          'Archivo': {
+            src: './src/assets/fonts/Archivo-*',
+            transform(font) {
+              if(font.basename === 'Archivo-Bold'){
+                font.weight = 700;
+              }
+              if(font.basename === 'Archivo-Regular'){
+                font.weight = 400;
+              }
+              if(font.basename === 'Archivo-SemiBold'){
+                font.weight = 500;
+              }
+              return font;
+            },
+          },
+          'Muli': {
+            src: './src/assets/fonts/Muli-Black*'
+          }
+        }
+        ,
+        preload: true,
+      }
+    })
   ],
 })
+

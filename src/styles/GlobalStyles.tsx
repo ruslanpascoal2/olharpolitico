@@ -5,12 +5,13 @@ const CustomStyles = createGlobalStyle`
   body{
     --color-bg: #fff;
     --color-gray: #fefefe;
-    --color-gray-darker: #e8e8e8;
+    --color-gray-darker: #e1e1e1;
     --color-green-dark: #29302b;
     --color-text: #282d2b;
     --color-green: #95cd4d;
     --color-purple: #8970fb;
     --color-pink: #e9a99a;
+    font-family: 'Archivo', sans-serif;
   }
 `
 
